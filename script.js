@@ -106,7 +106,48 @@ document.getElementById("orderForm").addEventListener("submit", function(event) 
 
   payWithRazorpay(orderDetails);
 });
+function payWithRazorpay(orderDetails) {
+    // 1. Charges calculate karein
+    const packingCharge = 25;
+    const deliveryCharge = 40;
+    
+    // Agar orderDetails me total pehle se hai toh wo use karega, nahi toh fallback calculation
+    let itemTotal = orderDetails.total || orderDetails.subtotal || 350;
+    let finalAmount = itemTotal + packingCharge + deliveryCharge;
 
+    var options = {
+        "key": "rzp_test_YOUR_KEY_HERE", // Yahan Razorpay Test Key ID daalein
+        "amount": finalAmount * 100, // Amount paise me (Rs * 100)
+        "currency": "INR",
+        "name": "NIGHT WOK",
+        "description": "Order (Food + Packing + Delivery)",
+        
+        "handler": function (response) {
+            alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+            console.log("Payment Details:", response);
+            // Optional: Agar cart clear karni ho:
+            // cart = [];
+            // renderCart();
+        },
+        
+        "prefill": {
+            "name": orderDetails.name || "",
+            "contact": orderDetails.phone || ""
+        },
+        
+        "theme": {
+            "color": "#0c2340"
+        }
+    };
+
+    var rzp = new Razorpay(options);
+    
+    rzp.on('payment.failed', function (response) {
+        alert("Payment Cancelled/Failed: " + response.error.description);
+    });
+
+    rzp.open();
+}
 function updateOpeningStatus() {
   const now = new Date();
   const day = now.getDay();
