@@ -1,0 +1,178 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #101010;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 7%;
+  border-bottom: 1px solid #333;
+}
+
+.logo {
+  color: #ff6b24;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.logo small {
+  display: block;
+  color: #aaa;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.whatsapp {
+  color: white;
+  text-decoration: none;
+  border: 1px solid #555;
+  padding: 10px 15px;
+}
+
+.hero {
+  padding: 85px 8%;
+  background: radial-gradient(circle at top right, #542511, #101010 65%);
+}
+
+.hero p:first-child {
+  color: #ff6b24;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  font-size: clamp(45px, 8vw, 85px);
+  line-height: 1;
+}
+
+.hero h1 span {
+  color: #ff6b24;
+}
+
+.main-btn, .pay-btn {
+  display: inline-block;
+  background: #ff6b24;
+  color: #111;
+  border: none;
+  padding: 14px 20px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+section#menu, section#order {
+  padding: 55px 7%;
+}
+
+h2 {
+  font-size: 35px;
+  color: #ff6b24;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.menu-card {
+  background: #1d1d1d;
+  border: 1px solid #333;
+  padding: 20px;
+}
+
+.menu-card h3 {
+  margin-bottom: 8px;
+}
+
+.menu-card p {
+  color: #aaa;
+}
+
+.menu-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  color: #ff6b24;
+  font-weight: bold;
+}
+
+.add-btn {
+  padding: 9px 15px;
+  background: #ff6b24;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#cartItems, .bill, form {
+  background: #1d1d1d;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid #444;
+}
+
+.cart-row button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.bill small, .note {
+  color: #aaa;
+  line-height: 1.6;
+}
+
+form input, form textarea {
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+  padding: 13px;
+  background: #101010;
+  color: white;
+  border: 1px solid #555;
+  font: inherit;
+}
+
+form textarea {
+  min-height: 75px;
+}
+
+.pay-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+footer {
+  padding: 30px 7%;
+  border-top: 1px solid #333;
+  color: #aaa;
+}
+
+@media (max-width: 650px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 60px 7%;
+  }
+}

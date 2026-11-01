@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NIGHT WOK | Street Food After Dark</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">NIGHT WOK <small>STREET FOOD AFTER DARK</small></div>
+    <a href="https://wa.me/918889984267" class="whatsapp">WhatsApp</a>
+  </header>
+
+  <section class="hero">
+    <p>KURUD · BHILAI</p>
+    <h1>BIG FLAVOURS.<br><span>LATE NIGHTS.</span></h1>
+    <p>Freshly prepared street food for your night cravings.</p>
+    <a href="#menu" class="main-btn">EXPLORE MENU ↓</a>
+    <p id="openingStatus"></p>
+  </section>
+
+  <section id="menu">
+    <h2>OUR MENU</h2>
+    <div id="menuGrid" class="menu-grid"></div>
+  </section>
+
+  <section id="order">
+    <h2>YOUR ORDER</h2>
+    <div id="cartItems">Your cart is empty.</div>
+
+    <div class="bill">
+      <p>Subtotal: <strong id="subtotal">₹0</strong></p>
+      <p>Packing: <strong>₹10</strong></p>
+      <p>Delivery (within 2 km): <strong>₹30</strong></p>
+      <h3>Total estimate: <strong id="total">₹0</strong></h3>
+      <small>Beyond 2 km, delivery charges will be confirmed on WhatsApp before payment.</small>
+    </div>
+
+    <form id="orderForm">
+      <h3>DELIVERY DETAILS</h3>
+      <input id="customerName" placeholder="Your name" required>
+      <input id="customerPhone" placeholder="10-digit mobile number"
+             type="tel" pattern="[0-9]{10}" maxlength="10" required>
+      <textarea id="customerAddress" placeholder="Full delivery address" required></textarea>
+      <textarea id="deliveryNote" placeholder="Special instructions (optional)"></textarea>
+      <button type="submit" class="pay-btn">PAY ONLINE →</button>
+      <p class="note">Online payment will be activated after secure Razorpay setup. This button is not collecting money yet.</p>
+    </form>
+  </section>
+
+  <footer>
+    <h3>NIGHT WOK</h3>
+    <p>Kurud, Bhilai</p>
+    <p>Monday–Saturday: 6 PM – 1 AM</p>
+    <p>Sunday: 7 AM – 12 PM</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
